@@ -21,4 +21,5 @@ payload.exe
 resources.pak
 v8_context_snapshot.bin
 
+node_modules
 *.log
