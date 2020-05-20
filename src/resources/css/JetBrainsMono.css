@@ -33,6 +33,7 @@ IntelliJ UX Team
     url("../font/JetBrainsMono/JetBrainsMono-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
+    font-display: fallback;
 }
 
 @font-face {
@@ -44,6 +45,7 @@ IntelliJ UX Team
     url("../font/JetBrainsMono/JetBrainsMono-Italic.ttf") format("truetype");
     font-weight: 400;
     font-style: italic;
+    font-display: fallback;
 }
 
 @font-face {
@@ -55,6 +57,7 @@ IntelliJ UX Team
     url("../font/JetBrainsMono/JetBrainsMono-Medium.ttf") format("truetype");
     font-weight: 500;
     font-style: normal;
+    font-display: fallback;
 }
 
 @font-face {
@@ -66,6 +69,7 @@ IntelliJ UX Team
     url("../font/JetBrainsMono/JetBrainsMono-Medium-Italic.ttf") format("truetype");
     font-weight: 500;
     font-style: italic;
+    font-display: fallback;
 }
 
 @font-face {
@@ -77,6 +81,7 @@ IntelliJ UX Team
     url("../font/JetBrainsMono/JetBrainsMono-Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
+    font-display: fallback;
 }
 
 @font-face {
@@ -88,6 +93,7 @@ IntelliJ UX Team
     url("../font/JetBrainsMono/JetBrainsMono-Bold-Italic.ttf") format("truetype");
     font-weight: 700;
     font-style: italic;
+    font-display: fallback;
 }
 
 @font-face {
@@ -99,6 +105,7 @@ IntelliJ UX Team
     url("../font/JetBrainsMono/JetBrainsMono-ExtraBold.ttf") format("truetype");
     font-weight: 900;
     font-style: normal;
+    font-display: fallback;
 }
 
 @font-face {
@@ -110,6 +117,7 @@ IntelliJ UX Team
     url("../font/JetBrainsMono/JetBrainsMono-ExtraBold-Italic.ttf") format("truetype");
     font-weight: 900;
     font-style: italic;
+    font-display: fallback;
 }
 
 html, body {

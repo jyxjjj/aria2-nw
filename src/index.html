@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>aria2-nw</title>
+    <title>Aria2-NW</title>
     <link href="resources/css/bootstrap.min.css" rel="stylesheet" rev="stylesheet">
     <link href="resources/css/font-awesome.css" rel="stylesheet" rev="stylesheet">
     <link href="resources/css/cursor.css" rel="stylesheet" rev="stylesheet">
@@ -13,20 +13,38 @@
     <link href="resources/css/index.css" rel="stylesheet" rev="stylesheet">
     <link href="resources/css/navbar.css" rel="stylesheet" rev="stylesheet">
     <link href="resources/css/sidebar.css" rel="stylesheet" rev="stylesheet">
-    <style>
-
-    </style>
+    <link href="resources/css/button.css" rel="stylesheet" rev="stylesheet">
+    <link href="resources/css/tips.css" rel="stylesheet" rev="stylesheet">
     <script>
+        window.alert = (s) => {
+            let tipDiv = $('#tipDiv');
+            let tips = $('#tips');
+            tips.html(s);
+            tipDiv.show();
+            tipDiv.height(tips.height() + 150);
+            tipDiv.width(tips.width() + 200);
+            tipDiv.css({
+                'left': (window.innerWidth - tipDiv.width()) / 2 + 'px',
+                'top': (window.innerHeight - tipDiv.height()) / 2 + 'px',
+            });
+        };
+        let chromeURL = nw.Shell.openExternal;
         let win = nw.Window.get();
         let runMode = process.versions['nw-flavor'];
         if (runMode === 'sdk') {
             win.showDevTools();
         }
-        let minimizeMainWindow = (e) => {
+        let minimizeMainWindow = () => {
             win.minimize();
         };
-        let closeMainWindow = (e) => {
+        let maximizeMainWindow = () => {
+            alert('暂不支持修改窗口大小');
+        };
+        let closeMainWindow = () => {
             win.close();
+        };
+        let showAboutWindow = () => {
+            $('#aboutDiv').show();
         };
     </script>
 </head>
@@ -35,8 +53,8 @@
     <a href="javascript:void(0);">Aria2-NW</a>
     <div class="window-controls">
         <a class="nodrag" href="javascript:minimizeMainWindow();"><i class="fa fa-window-minimize"></i></a>
-        <a class="nodrag" href="javascript:alert('暂不支持修改窗口大小');"><i class="fa fa-window-maximize"></i></a>
-        <a class="nodrag" href="javascript:closeMainWindow();"><i class="fa fa-window-close"></i></a>
+        <a class="nodrag" href="javascript:maximizeMainWindow();"><i class="fa fa-window-maximize"></i></a>
+        <a class="nodrag" href="javascript:closeMainWindow();"><i class="fa fa-times fa-lg"></i></a>
     </div>
 </nav>
 <div class="sidebar">
@@ -45,9 +63,32 @@
         <li class="sidebar-item"><a href="javascript:"><i class="fa fa-cogs"></i> 设置</a></li>
     </ul>
     <ul>
-        <li class="sidebar-item"><a href="javascript:"><i class="fa fa-certificate"></i> 关于</a></li>
+        <li class="sidebar-item"><a href="javascript:showAboutWindow();"><i class="fa fa-certificate"></i> 关于</a></li>
         <li class="sidebar-item"><a href="javascript:closeMainWindow();"><i class="fa fa-sign-out"></i> 退出</a></li>
     </ul>
+</div>
+<div id="tipDiv">
+    <div id="tips"></div>
+    <a id="closeTipDiv" href="javascript:$('#tipDiv').hide();" class="btn btn-primary btn-save">确定</a>
+</div>
+<div id="aboutDiv" style="height: 320px; width: 600px; left: 350px; top: 200px;">
+    <div id="about">
+        <h2>关于本软件</h2>
+        龙缘科技 版权所有<br/>
+        Copyright &copy; DESMG 2016-2020 All Rights Reserved.<br/>
+        Telegram: <a href="javascript:chromeURL('https://t.me/jyxjjj');" style="color: #CCCCCC;">@jyxjjj</a><br/>
+        GitHub: <a href="javascript:chromeURL('https://github.com/jyxjjj/aria2-nw');" style="color: #CCCCCC;">jyxjjj/aria2-nw</a><br/>
+    </div>
+    <script>
+        let os = require('os');
+        let divAbout = $('#about');
+        divAbout.append(`OS Type: ${os.type()} ${os.platform()} ${os.arch()}<br/>`);
+        divAbout.append(`OS Version: ${os.version()} ${os.release()}<br/>`);
+        let cpus = os.cpus();
+        divAbout.append(`CPU: ${cpus[0].model} * ${cpus.length}<br/>`);
+        divAbout.append(`Memory: ${(os.freemem() / 1024 / 1024 / 1024).toFixed(2)}GiB / ${(os.totalmem() / 1024 / 1024 / 1024).toFixed(2)}GiB`);
+    </script>
+    <a id="closeAboutDiv" href="javascript:$('#aboutDiv').hide();" class="btn btn-primary btn-save">确定</a>
 </div>
 </body>
 </html>
