@@ -1,0 +1,58 @@
+{
+  "name": "aria2-nw",
+  "version": "1.0.0",
+  "description": "Call aria2 via NW.js",
+  "main": "src/index.html",
+  "window": {
+    "title": "aria2-nw",
+    "width": 1280,
+    "height": 720,
+    "toolbar": true,
+    "icon": "src/favicon.png",
+    "position": "center",
+    "resizable": false,
+    "frame": false,
+    "transparent": false
+  },
+  "webkit": {
+    "plugin": false
+  },
+  "chromium-args": "--allow-file-access-from-files",
+  "user-agent": "DESMG-Web-Client aria2-nw",
+  "scripts": {
+    "dev": "nw.exe"
+  },
+  "author": {
+    "name": "DESMG",
+    "email": "postmaster@desmg.com"
+  },
+  "contributors": [
+    {
+      "name": "ShenLin",
+      "email": "773933146@qq.com"
+    }
+  ],
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jyxjjj/aria2-nw.git"
+  },
+  "keywords": [
+    "aria2",
+    "aria",
+    "nw"
+  ],
+  "bugs": {
+    "url": "https://github.com/jyxjjj/aria2-nw/issues"
+  },
+  "homepage": "https://github.com/jyxjjj/aria2-nw#readme",
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "nwjs-types": "^1.0.0"
+  }
+}
