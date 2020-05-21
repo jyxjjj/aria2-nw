@@ -1,3 +1,17 @@
+let win = nw.Window.get(undefined);
+let runMode = process.versions['nw-flavor'];
+if (runMode === 'sdk') {
+    // win.showDevTools();
+    setTimeout(_ =>
+            win.capturePage((buffer) => {
+                let fs = require('fs');
+                fs.writeFileSync('src/screenshot.png', buffer);
+                showWindow('SETTING');
+            }, {'format': 'png', 'datatype': 'buffer'})
+        , 1000);
+}
+
+
 window.alert = (s) => {
     let tipDiv = $('#tipDiv');
     let tips = $('#tips');
@@ -11,17 +25,8 @@ window.alert = (s) => {
     });
 };
 let chromeURL = nw.Shell.openExternal;
-let win = nw.Window.get(undefined);
-let runMode = process.versions['nw-flavor'];
-if (runMode === 'sdk') {
-    // win.showDevTools();
-    setTimeout(() =>
-            win.capturePage((buffer) => {
-                let fs = require('fs');
-                fs.writeFileSync('src/screenshot.png', buffer);
-            }, {'format': 'png', 'datatype': 'buffer'})
-        , 1000);
-}
+
+
 let minimizeMainWindow = () => {
     win.minimize();
 };
@@ -34,29 +39,38 @@ let closeMainWindow = () => {
 let showWindow = (WINDOW_NAME) => {
     let [
         welcomDiv,
+        NEW_TASK,
         PROCESSING_TASKS,
         WAITING_TASKS,
         FINISHED_TASKS,
         STOPPED_TASKS,
+        CONVERT,
         settingDiv,
         aboutDiv
     ] = [
         $('#welcomeDiv'),
+        $('#NEW_TASK'),
         $('#PROCESSING_TASKS'),
         $('#WAITING_TASKS'),
         $('#FINISHED_TASKS'),
         $('#STOPPED_TASKS'),
+        $('#CONVERT'),
         $('#settingDiv'),
         $('#aboutDiv')
     ];
     welcomDiv.hide();
+    NEW_TASK.hide();
     PROCESSING_TASKS.hide();
     WAITING_TASKS.hide();
     FINISHED_TASKS.hide();
     STOPPED_TASKS.hide();
+    CONVERT.hide();
     settingDiv.hide();
     aboutDiv.hide();
     switch (WINDOW_NAME) {
+        case 'NEW_TASK':
+            NEW_TASK.show();
+            break;
         case 'PROCESSING_TASKS':
             PROCESSING_TASKS.show();
             break;
@@ -68,6 +82,9 @@ let showWindow = (WINDOW_NAME) => {
             break;
         case 'STOPPED_TASKS':
             STOPPED_TASKS.show();
+            break;
+        case 'CONVERT':
+            CONVERT.show();
             break;
         case 'SETTING':
             settingDiv.show();

@@ -19,25 +19,25 @@
 </head>
 <body>
 <nav class="drag navbar shadow">
-    <a href="javascript:void(0);">Aria2-NW</a>
+    <a href="javascript:void(0);"><i class="fa fa-arrow-circle-down"></i> ARIA2-NW</a>
     <div class="window-controls">
         <a class="nodrag" href="javascript:minimizeMainWindow();"><i class="fa fa-window-minimize"></i></a>
         <a class="nodrag" href="javascript:maximizeMainWindow();"><i class="fa fa-window-maximize"></i></a>
         <a class="nodrag" href="javascript:closeMainWindow();"><i class="fa fa-times fa-lg"></i></a>
     </div>
 </nav>
-<div class="sidebar">
+<div class="sidebar shadow">
     <ul>
         <li class="sidebar-title">操作</li>
         <li class="sidebar-item"><a href="javascript:showWindow('NEW_TASK');"><i class="fa fa-plus"></i> 新建任务</a></li>
         <li class="sidebar-title">任务</li>
-        <li class="sidebar-item"><a href="javascript:showWindow('PROCESSING_TASKS');"><i class="fa fa-arrow-circle-o-up"></i> 正在下载</a></li>
+        <li class="sidebar-item"><a href="javascript:showWindow('PROCESSING_TASKS');"><i class="fa fa-arrow-circle-o-down"></i> 正在下载</a></li>
         <li class="sidebar-item"><a href="javascript:showWindow('WAITING_TASKS');"><i class="fa fa-clock-o"></i> 等待中</a></li>
         <li class="sidebar-item"><a href="javascript:showWindow('FINISHED_TASKS');"><i class="fa fa-check-circle-o"></i> 已完成</a></li>
         <li class="sidebar-item"><a href="javascript:showWindow('STOPPED_TASKS');"><i class="fa fa-stop-circle-o"></i> 已停止</a></li>
         <li class="sidebar-title">系统设置</li>
         <li class="sidebar-item"><a href="javascript:showWindow('SETTING');"><i class="fa fa-cogs"></i> 设置</a></li>
-        <li class="sidebar-item"><a href="javascript:showWindow('CONVERT');"><i class="fa fa-cogs"></i> 自动转码</a></li>
+        <li class="sidebar-item"><a href="javascript:showWindow('CONVERT');"><i class="fa fa-refresh"></i> 转码设置</a></li>
     </ul>
     <ul>
         <li class="sidebar-title">状态</li>
@@ -54,6 +54,11 @@
     使用Aira2-NW随时调用您的aria2c以下载文件<br/>
     点击左侧的新建任务开始您的下载<br/>
     或从上次停下的地方继续
+</div>
+<div id="NEW_TASK" class="main" style="display: none;">
+    <div id="NEW_TASK_MAIN">
+        <h2>新建任务</h2>
+    </div>
 </div>
 <div id="PROCESSING_TASKS" class="main" style="display: none;">
     <div id="PROCESSING_TASKS_MAIN">
@@ -80,6 +85,11 @@
         <h2>设置</h2>
     </div>
 </div>
+<div id="CONVERT" class="main" style="display: none;">
+    <div id="CONVERT_MAIN">
+        <h2>转码设置</h2>
+    </div>
+</div>
 <!--#region abutDiv-->
 <div id="aboutDiv" class="main" style="display: none;">
     <div id="about">
@@ -92,7 +102,7 @@
 <!--#region tipDiv-->
 <div id="tipDiv">
     <div id="tips"></div>
-    <a href="javascript:$('#tipDiv').hide();" class="btn btn-primary btn-save">确定</a>
+    <a href="javascript:$('#tipDiv').hide();" class="btn btn-save">确定</a>
 </div>
 <!--#endregion-->
 </body>
