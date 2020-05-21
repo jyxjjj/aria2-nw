@@ -10,92 +10,12 @@
     <script src="resources/js/jquery.min.js"></script>
     <script src="resources/js/popper.min.js"></script>
     <script src="resources/js/bootstrap.min.js"></script>
+    <script src="resources/js/index.js"></script>
     <link href="resources/css/index.css" rel="stylesheet" rev="stylesheet">
     <link href="resources/css/navbar.css" rel="stylesheet" rev="stylesheet">
     <link href="resources/css/sidebar.css" rel="stylesheet" rev="stylesheet">
     <link href="resources/css/button.css" rel="stylesheet" rev="stylesheet">
     <link href="resources/css/tips.css" rel="stylesheet" rev="stylesheet">
-    <script>
-        window.alert = (s) => {
-            let tipDiv = $('#tipDiv');
-            let tips = $('#tips');
-            tips.html(s);
-            tipDiv.show();
-            tipDiv.height(tips.height() + 150);
-            tipDiv.width(tips.width() + 200);
-            tipDiv.css({
-                'left': (window.innerWidth - tipDiv.width()) / 2 + 'px',
-                'top': (window.innerHeight - tipDiv.height()) / 2 + 'px',
-            });
-        };
-        let chromeURL = nw.Shell.openExternal;
-        let win = nw.Window.get(undefined);
-        let runMode = process.versions['nw-flavor'];
-        if (runMode === 'sdk') {
-            // win.showDevTools();
-            setTimeout(() =>
-                    win.capturePage((buffer) => {
-                        let fs = require('fs');
-                        fs.writeFileSync('src/screenshot.png', buffer);
-                    }, {'format': 'png', 'datatype': 'buffer'})
-                , 1000);
-        }
-        let minimizeMainWindow = () => {
-            win.minimize();
-        };
-        let maximizeMainWindow = () => {
-            alert('暂不支持修改窗口大小');
-        };
-        let closeMainWindow = () => {
-            win.close();
-        };
-        let showWindow = (WINDOW_NAME) => {
-            let [
-                welcomDiv,
-                PROCESSING_TASKS,
-                WAITING_TASKS,
-                FINISHED_TASKS,
-                STOPPED_TASKS,
-                settingDiv,
-                aboutDiv
-            ] = [
-                $('#welcomeDiv'),
-                $('#PROCESSING_TASKS'),
-                $('#WAITING_TASKS'),
-                $('#FINISHED_TASKS'),
-                $('#STOPPED_TASKS'),
-                $('#settingDiv'),
-                $('#aboutDiv')
-            ];
-            welcomDiv.hide();
-            PROCESSING_TASKS.hide();
-            WAITING_TASKS.hide();
-            FINISHED_TASKS.hide();
-            STOPPED_TASKS.hide();
-            settingDiv.hide();
-            aboutDiv.hide();
-            switch (WINDOW_NAME) {
-                case 'PROCESSING_TASKS':
-                    PROCESSING_TASKS.show();
-                    break;
-                case 'WAITING_TASKS':
-                    WAITING_TASKS.show();
-                    break;
-                case 'FINISHED_TASKS':
-                    FINISHED_TASKS.show();
-                    break;
-                case 'STOPPED_TASKS':
-                    STOPPED_TASKS.show();
-                    break;
-                case 'SETTING':
-                    settingDiv.show();
-                    break;
-                case 'ABOUT':
-                    aboutDiv.show();
-                    break;
-            }
-        };
-    </script>
 </head>
 <body>
 <nav class="drag navbar shadow">
@@ -108,6 +28,8 @@
 </nav>
 <div class="sidebar">
     <ul>
+        <li class="sidebar-title">操作</li>
+        <li class="sidebar-item"><a href="javascript:showWindow('NEW_TASK');"><i class="fa fa-plus"></i> 新建任务</a></li>
         <li class="sidebar-title">任务</li>
         <li class="sidebar-item"><a href="javascript:showWindow('PROCESSING_TASKS');"><i class="fa fa-arrow-circle-o-up"></i> 正在下载</a></li>
         <li class="sidebar-item"><a href="javascript:showWindow('WAITING_TASKS');"><i class="fa fa-clock-o"></i> 等待中</a></li>
@@ -115,6 +37,7 @@
         <li class="sidebar-item"><a href="javascript:showWindow('STOPPED_TASKS');"><i class="fa fa-stop-circle-o"></i> 已停止</a></li>
         <li class="sidebar-title">系统设置</li>
         <li class="sidebar-item"><a href="javascript:showWindow('SETTING');"><i class="fa fa-cogs"></i> 设置</a></li>
+        <li class="sidebar-item"><a href="javascript:showWindow('CONVERT');"><i class="fa fa-cogs"></i> 自动转码</a></li>
     </ul>
     <ul>
         <li class="sidebar-title">状态</li>
@@ -162,23 +85,7 @@
     <div id="about">
         <h2>关于本软件</h2>
     </div>
-    <script>
-        let os = require('os');
-        let divAbout = $('#about');
-        divAbout.append(`Name: ${nw.App.manifest['name']}<br/>`);
-        divAbout.append(`Version: ${nw.App.manifest['version']}<br/><br/>`);
-        divAbout.append(`龙缘科技 版权所有<br/>
-        Copyright &copy; DESMG 2016-2020 All Rights Reserved.<br/>
-        Telegram: <a href="javascript:chromeURL('https://t.me/jyxjjj');" style="color: #CCCCCC;">@jyxjjj</a><br/>
-        GitHub: <a href="javascript:chromeURL('https://github.com/jyxjjj/aria2-nw');" style="color: #CCCCCC;">jyxjjj/aria2-nw</a><br/>
-        BUG Report: <a href="javascript:chromeURL('https://github.com/jyxjjj/aria2-nw/issues');" style="color: #CCCCCC;">GitHub Issues</a><br/>
-        <br/>`);
-        divAbout.append(`OS Type: ${os.type()} ${os.platform()} ${os.arch()}<br/>`);
-        divAbout.append(`OS Version: ${os.version()} ${os.release()}<br/>`);
-        let cpus = os.cpus();
-        divAbout.append(`CPU: ${cpus[0].model} * ${process.env.NUMBER_OF_PROCESSORS}<br/>`);
-        divAbout.append(`Memory: ${(os.freemem() / 1024 / 1024 / 1024).toFixed(2)}GiB / ${(os.totalmem() / 1024 / 1024 / 1024).toFixed(2)}GiB`);
-    </script>
+    <script src="resources/js/about.js"></script>
     <a href="javascript:$('#aboutDiv').hide();" class="btn btn-save">确定</a>
 </div>
 <!--#endregion-->
