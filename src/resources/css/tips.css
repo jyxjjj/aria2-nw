@@ -1,4 +1,4 @@
-#tipDiv, #aboutDiv {
+#tipDiv {
     display: none;
     position: fixed;
     background-color: #4F5154;
@@ -6,7 +6,7 @@
     z-index: 999999;
 }
 
-#tips, #about {
+#tips {
     margin: 1rem;
     padding: 0;
     display: inline-block;

@@ -3,6 +3,7 @@
     height: 32px;
     line-height: 32px;
     background-color: #4F5154;
+    user-select: none;
 }
 
 .window-controls {

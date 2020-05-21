@@ -2,6 +2,10 @@
 
 Call aria2 via NW.js
 
+## Screenshot
+
+![Screenshot](src/screenshot.png)
+
 ## Install
 
 ```
@@ -16,9 +20,13 @@ Call aria2 via NW.js
 
 ## Contributing
 
-All modules.
+All modules' authors and all contributors.
 
 ## Feedback
+
+[Submit Issues](https://github.com/jyxjjj/aria2-nw/issues)
+
+or
 
 [Telegram: @jyxjjj](https://t.me/jyxjjj)
 

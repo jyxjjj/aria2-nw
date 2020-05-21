@@ -35,3 +35,13 @@ ul, li {
 .fa {
     margin: -3px 0 0 0;
 }
+
+.main {
+    margin: 0 0 0 150px;
+    padding: 1rem .5rem .5rem 1rem;
+    position: relative;
+    height: 688px;
+    width: 1130px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
