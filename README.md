@@ -1,34 +1,8 @@
 # aria2-nw
 
-Call aria2 via NW.js
+Removed
 
-## Screenshot
-
-![Screenshot](src/screenshot.png)
-
-## Install
-
-```
-> npm i
-```
-
-## Usage
-
-```
-> nw
-```
-
-## Contributing
-
-All modules' authors and all contributors.
-
-## Feedback
-
-[Submit Issues](https://github.com/jyxjjj/aria2-nw/issues)
-
-or
-
-[Telegram: @jyxjjj](https://t.me/jyxjjj)
+**Old files will be found in [9628cee](https://github.com/jyxjjj/aria2-nw/commit/9628cee98b5ad14d86158a2c23a19ab13a7b654b)**
 
 ## License
 
