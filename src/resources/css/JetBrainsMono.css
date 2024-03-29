@@ -1,0 +1,132 @@
+/*!
+ * Copyright: Copyright='DESMG(www.desmg.com) All Rigths Reserved.'; QQ=773933146; Telegram=jyxjjj(https://t.me/jyxjjj); Producer=DESMG
+ * Version: 1.0.1
+ * File: JetBrains Mono Web Font CSS By DESMG.
+ * License: GNU General Public License v3.0
+ * Author: DESMG
+ */
+/*!
+ * Warning: This CSS and Font files from Our Site are Commercial Used, and Licensed by GNU General Public License v3.0. We have the rights to pursue the legal liability of illegal users.
+ * Note: JetBrains Mono doesn't support zh-CN yet.
+ * _Font: JetBrains Mono
+ * _Copyright: JetBrains
+ * _License: Apache-2.0
+ * _Credits:
+***
+TYPE DESIGNER: Philipp Nurullin
+PROJECT LEAD: Konstantin Bulenkov
+THANKS TO:
+Nikita Prokopov
+Eugene Auduchinok
+Dmitrij Batrak
+Tatiana Tulupenko
+IntelliJ UX Team
++ the whole JetBrains Team
+***
+ */
+@font-face {
+    font-family: JetBrainsMono;
+    src: url("../font/JetBrainsMono/JetBrainsMono-Regular.eot");
+    src: url("../font/JetBrainsMono/JetBrainsMono-Regular.woff2") format("woff2"),
+    url("../font/JetBrainsMono/JetBrainsMono-Regular.woff") format("woff"),
+    url("../font/JetBrainsMono/JetBrainsMono-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../font/JetBrainsMono/JetBrainsMono-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: JetBrainsMono;
+    src: url("../font/JetBrainsMono/JetBrainsMono-Italic.eot");
+    src: url("../font/JetBrainsMono/JetBrainsMono-Italic.woff2") format("woff2"),
+    url("../font/JetBrainsMono/JetBrainsMono-Italic.woff") format("woff"),
+    url("../font/JetBrainsMono/JetBrainsMono-Italic.eot?#iefix") format("embedded-opentype"),
+    url("../font/JetBrainsMono/JetBrainsMono-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: JetBrainsMono;
+    src: url("../font/JetBrainsMono/JetBrainsMono-Medium.eot");
+    src: url("../font/JetBrainsMono/JetBrainsMono-Medium.woff2") format("woff2"),
+    url("../font/JetBrainsMono/JetBrainsMono-Medium.woff") format("woff"),
+    url("../font/JetBrainsMono/JetBrainsMono-Medium.eot?#iefix") format("embedded-opentype"),
+    url("../font/JetBrainsMono/JetBrainsMono-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: JetBrainsMono;
+    src: url("../font/JetBrainsMono/JetBrainsMono-Medium-Italic.eot");
+    src: url("../font/JetBrainsMono/JetBrainsMono-Medium-Italic.woff2") format("woff2"),
+    url("../font/JetBrainsMono/JetBrainsMono-Medium-Italic.woff") format("woff"),
+    url("../font/JetBrainsMono/JetBrainsMono-Medium-Italic.eot?#iefix") format("embedded-opentype"),
+    url("../font/JetBrainsMono/JetBrainsMono-Medium-Italic.ttf") format("truetype");
+    font-weight: 500;
+    font-style: italic;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: JetBrainsMono;
+    src: url("../font/JetBrainsMono/JetBrainsMono-Bold.eot");
+    src: url("../font/JetBrainsMono/JetBrainsMono-Bold.woff2") format("woff2"),
+    url("../font/JetBrainsMono/JetBrainsMono-Bold.woff") format("woff"),
+    url("../font/JetBrainsMono/JetBrainsMono-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../font/JetBrainsMono/JetBrainsMono-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: JetBrainsMono;
+    src: url("../font/JetBrainsMono/JetBrainsMono-Bold-Italic.eot");
+    src: url("../font/JetBrainsMono/JetBrainsMono-Bold-Italic.woff2") format("woff2"),
+    url("../font/JetBrainsMono/JetBrainsMono-Bold-Italic.woff") format("woff"),
+    url("../font/JetBrainsMono/JetBrainsMono-Bold-Italic.eot?#iefix") format("embedded-opentype"),
+    url("../font/JetBrainsMono/JetBrainsMono-Bold-Italic.ttf") format("truetype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: JetBrainsMono;
+    src: url("../font/JetBrainsMono/JetBrainsMono-ExtraBold.eot");
+    src: url("../font/JetBrainsMono/JetBrainsMono-ExtraBold.woff2") format("woff2"),
+    url("../font/JetBrainsMono/JetBrainsMono-ExtraBold.woff") format("woff"),
+    url("../font/JetBrainsMono/JetBrainsMono-ExtraBold.eot?#iefix") format("embedded-opentype"),
+    url("../font/JetBrainsMono/JetBrainsMono-ExtraBold.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: JetBrainsMono;
+    src: url("../font/JetBrainsMono/JetBrainsMono-ExtraBold-Italic.eot");
+    src: url("../font/JetBrainsMono/JetBrainsMono-ExtraBold-Italic.woff2") format("woff2"),
+    url("../font/JetBrainsMono/JetBrainsMono-ExtraBold-Italic.woff") format("woff"),
+    url("../font/JetBrainsMono/JetBrainsMono-ExtraBold-Italic.eot?#iefix") format("embedded-opentype"),
+    url("../font/JetBrainsMono/JetBrainsMono-ExtraBold-Italic.ttf") format("truetype");
+    font-weight: 900;
+    font-style: italic;
+    font-display: fallback;
+}
+
+html, body {
+    font-family: JetBrainsMono, sans-serif, monospace;
+    -webkit-font-feature-settings: "liga" on, "calt" on;
+    -moz-font-feature-settings: "liga" on, "calt" on;
+    -o-font-feature-settings: "liga" on, "calt" on;
+    font-feature-settings: "liga" on, "calt" on;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}

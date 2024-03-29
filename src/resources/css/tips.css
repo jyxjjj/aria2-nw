@@ -1,0 +1,13 @@
+#tipDiv {
+    display: none;
+    position: fixed;
+    background-color: #4F5154;
+    border-radius: 1rem;
+    z-index: 999999;
+}
+
+#tips {
+    margin: 1rem;
+    padding: 0;
+    display: inline-block;
+}

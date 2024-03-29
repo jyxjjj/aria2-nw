@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Aria2-NW</title>
+    <link href="resources/css/bootstrap.min.css" rel="stylesheet" rev="stylesheet">
+    <link href="resources/css/font-awesome.css" rel="stylesheet" rev="stylesheet">
+    <link href="resources/css/cursor.css" rel="stylesheet" rev="stylesheet">
+    <link href="resources/css/JetBrainsMono.css" rel="stylesheet" rev="stylesheet">
+    <script src="resources/js/jquery.min.js"></script>
+    <script src="resources/js/popper.min.js"></script>
+    <script src="resources/js/bootstrap.min.js"></script>
+    <script src="resources/js/index.js"></script>
+    <link href="resources/css/index.css" rel="stylesheet" rev="stylesheet">
+    <link href="resources/css/navbar.css" rel="stylesheet" rev="stylesheet">
+    <link href="resources/css/sidebar.css" rel="stylesheet" rev="stylesheet">
+    <link href="resources/css/button.css" rel="stylesheet" rev="stylesheet">
+    <link href="resources/css/tips.css" rel="stylesheet" rev="stylesheet">
+</head>
+<body>
+<nav class="drag navbar shadow">
+    <a href="javascript:void(0);"><i class="fa fa-arrow-circle-down"></i> ARIA2-NW</a>
+    <div class="window-controls">
+        <a class="nodrag" href="javascript:minimizeMainWindow();"><i class="fa fa-window-minimize"></i></a>
+        <a class="nodrag" href="javascript:maximizeMainWindow();"><i class="fa fa-window-maximize"></i></a>
+        <a class="nodrag" href="javascript:closeMainWindow();"><i class="fa fa-times fa-lg"></i></a>
+    </div>
+</nav>
+<div class="sidebar shadow">
+    <ul>
+        <li class="sidebar-title">操作</li>
+        <li class="sidebar-item"><a href="javascript:showWindow('NEW_TASK');"><i class="fa fa-plus"></i> 新建任务</a></li>
+        <li class="sidebar-title">任务</li>
+        <li class="sidebar-item"><a href="javascript:showWindow('PROCESSING_TASKS');"><i class="fa fa-arrow-circle-o-down"></i> 正在下载</a></li>
+        <li class="sidebar-item"><a href="javascript:showWindow('WAITING_TASKS');"><i class="fa fa-clock-o"></i> 等待中</a></li>
+        <li class="sidebar-item"><a href="javascript:showWindow('FINISHED_TASKS');"><i class="fa fa-check-circle-o"></i> 已完成</a></li>
+        <li class="sidebar-item"><a href="javascript:showWindow('STOPPED_TASKS');"><i class="fa fa-stop-circle-o"></i> 已停止</a></li>
+        <li class="sidebar-title">系统设置</li>
+        <li class="sidebar-item"><a href="javascript:showWindow('SETTING');"><i class="fa fa-cogs"></i> 设置</a></li>
+        <li class="sidebar-item"><a href="javascript:showWindow('CONVERT');"><i class="fa fa-refresh"></i> 转码设置</a></li>
+    </ul>
+    <ul>
+        <li class="sidebar-title">状态</li>
+        <li class="sidebar-item"><a href="javascript:void(0);" class="text-center"><i class="fa fa-chain-broken"></i> 未连接</a></li>
+        <li class="sidebar-item"><a href="javascript:void(0);" class="text-center"><i class="fa fa-upload"></i> 0.00B/s</a></li>
+        <li class="sidebar-item"><a href="javascript:void(0);" class="text-center"><i class="fa fa-download"></i> 0.00B/s</a></li>
+        <li class="sidebar-title">其他</li>
+        <li class="sidebar-item"><a href="javascript:showWindow('ABOUT');" class="text-center"><i class="fa fa-certificate"></i> 关于</a></li>
+        <li class="sidebar-item"><a href="javascript:closeMainWindow();" class="text-center"><i class="fa fa-sign-out"></i> 退出</a></li>
+    </ul>
+</div>
+<div id="welcomeDiv" class="main">
+    <h2>欢迎</h2>
+    使用Aira2-NW随时调用您的aria2c以下载文件<br/>
+    点击左侧的新建任务开始您的下载<br/>
+    或从上次停下的地方继续
+</div>
+<div id="NEW_TASK" class="main" style="display: none;">
+    <div id="NEW_TASK_MAIN">
+        <h2>新建任务</h2>
+    </div>
+</div>
+<div id="PROCESSING_TASKS" class="main" style="display: none;">
+    <div id="PROCESSING_TASKS_MAIN">
+        <h2>正在下载</h2>
+    </div>
+</div>
+<div id="WAITING_TASKS" class="main" style="display: none;">
+    <div id="WAITING_TASKS_MAIN">
+        <h2>等待中</h2>
+    </div>
+</div>
+<div id="FINISHED_TASKS" class="main" style="display: none;">
+    <div id="FINISHED_TASKS_MAIN">
+        <h2>已完成</h2>
+    </div>
+</div>
+<div id="STOPPED_TASKS" class="main" style="display: none;">
+    <div id="STOPPED_TASKS_MAIN">
+        <h2>已停止</h2>
+    </div>
+</div>
+<div id="settingDiv" class="main" style="display: none;">
+    <div id="setting">
+        <h2>设置</h2>
+    </div>
+</div>
+<div id="CONVERT" class="main" style="display: none;">
+    <div id="CONVERT_MAIN">
+        <h2>转码设置</h2>
+    </div>
+</div>
+<!--#region abutDiv-->
+<div id="aboutDiv" class="main" style="display: none;">
+    <div id="about">
+        <h2>关于本软件</h2>
+    </div>
+    <script src="resources/js/about.js"></script>
+    <a href="javascript:$('#aboutDiv').hide();" class="btn btn-save">确定</a>
+</div>
+<!--#endregion-->
+<!--#region tipDiv-->
+<div id="tipDiv">
+    <div id="tips"></div>
+    <a href="javascript:$('#tipDiv').hide();" class="btn btn-save">确定</a>
+</div>
+<!--#endregion-->
+</body>
+</html>

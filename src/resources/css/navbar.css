@@ -1,0 +1,26 @@
+.navbar {
+    padding: 0 0 0 1rem;
+    height: 32px;
+    line-height: 32px;
+    background-color: #4F5154;
+    user-select: none;
+}
+
+.window-controls {
+    height: 100%;
+}
+
+.window-controls > a {
+    margin: 0 1px;
+    display: inline-block;
+    height: 100%;
+    width: 32px;
+}
+
+.window-controls > a:hover {
+    color: #636568;
+}
+
+.window-controls > a:last-child:hover {
+    color: #FF0000;
+}
